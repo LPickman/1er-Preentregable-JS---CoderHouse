@@ -84,17 +84,17 @@ let operaciones = ["+"];
 const juegoMatematico = function () {
   let dificultad = 2;
   let puntaje = 0;
-  let num1 = Math.round(Math.random() * 100 + 11);
-  let num2 = Math.round(Math.random() * 100) + 11;
+  let num1 = Math.round(Math.random() * 100 + 15);
+  let num2 = Math.round(Math.random() * 100) + 13;
   console.log(num1, num2);
   if (presentacionJuego()) {
     for (let etapa = 1; etapa <= 5; etapa++) {
       if (
         parseInt(
           prompt(
-            `Etapa ${etapa} de 5\n\n ¿Cuanto es ${num1 * dificultad} + ${
-              num2 * dificultad
-            }?`
+            `Etapa ${etapa} de 5\n\nPuntaje actual: ${puntaje} de 100 puntos.\n\n¿Cuanto es ${
+              num1 * dificultad
+            } + ${num2 * dificultad}?`
           )
         ) ===
         num1 * dificultad + num2 * dificultad
@@ -106,7 +106,7 @@ const juegoMatematico = function () {
         alert(
           `Uhh! Te quedaste en la etapa ${etapa} de 5. El resultado de la operación era: ${
             num1 * dificultad + num2 * dificultad
-          }.\nTu puntaje final es: ${puntaje} puntos.`
+          }.\nTu puntaje final es: ${puntaje} de 100 puntos.`
         );
         break;
       }
