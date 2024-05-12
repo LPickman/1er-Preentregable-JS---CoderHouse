@@ -22,7 +22,7 @@ const juegoMatematico = function () {
         parseInt(
           //Convierte el resultado del usuario en número entero.
           prompt(
-            `Etapa ${etapa} de 5\n\nPuntaje actual: ${puntaje} de 100 puntos.\n\n¿Cuanto es ${
+            `Etapa ${etapa} de 5\nPuntaje actual: ${puntaje} de 100 puntos.\n\n¿Cuánto es ${
               num1 * dificultad
             } + ${num2 * dificultad}?`
           )
@@ -37,7 +37,7 @@ const juegoMatematico = function () {
           //En caso que el resultado dado por el usuario no sea correcto, devolverá el siguiente alert.
           `Uhh! Te quedaste en la etapa ${etapa} de 5. El resultado de la operación era: ${
             num1 * dificultad + num2 * dificultad
-          }.\nTu puntaje final es: ${puntaje} de 100 puntos.`
+          }.\n\nTu puntaje final es: ${puntaje} de 100 puntos.`
         );
         break;
       }
