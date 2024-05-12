@@ -1,4 +1,4 @@
-// // Juego Matemático
+// // ¡Desafío Matemático: Pon a prueba tus habilidades sumando números aleatorios en este juego emocionante. ¡Supera las 5 etapas y demuestra tu destreza matemática! ¿Te animas a aceptar el desafío?"
 
 // Se crea una función en donde se retorna el true o false del confirm(). Es decir, si el usuario acepta jugar el juego o no. Si acepta devolverá un true y si cancela devolverá un false.
 const presentacionJuego = function () {
