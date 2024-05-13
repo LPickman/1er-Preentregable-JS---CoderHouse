@@ -2,8 +2,6 @@
 
 // Se crea una función en donde se retorna el true o false del confirm(). Es decir, si el usuario acepta jugar el juego o no. Si acepta devolverá un true y si cancela devolverá un false.
 
-const jugar = document.getElementById("jugar");
-
 const presentacionJuego = function () {
   return confirm(
     `¡Desafío Matemático!\n\nTe desafío a realizar cálculos mentales.\n¡Por cada respuesta correcta, ganarás 20 puntos!\n\n¿Aceptas el desafío?`
@@ -55,6 +53,12 @@ const juegoMatematico = function () {
 };
 
 //El juego se ejecutará si el usuario hace click en jugar
-document.addEventListener("click", function () {
-  juegoMatematico();
+//Se carga si o si el "DOMContentLoaded" para que el ID "jugar" que está en el button de html pueda ser leído por el script.
+document.addEventListener("DOMContentLoaded", function () {
+  const jugar = document.getElementById("jugar");
+
+  //Si o si, se coloca "jugar.addEventListener" ya que de esta forma "escuchamos" al click en este id, que justamente es un botón.
+  jugar.addEventListener("click", function () {
+    juegoMatematico();
+  });
 });
