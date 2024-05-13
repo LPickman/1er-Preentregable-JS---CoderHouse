@@ -1,6 +1,9 @@
 // // ¡Desafío Matemático: Pon a prueba tus habilidades sumando números aleatorios en este juego emocionante. ¡Supera las 5 etapas y demuestra tu destreza matemática! ¿Te animas a aceptar el desafío?"
 
 // Se crea una función en donde se retorna el true o false del confirm(). Es decir, si el usuario acepta jugar el juego o no. Si acepta devolverá un true y si cancela devolverá un false.
+
+const jugar = document.getElementById("jugar");
+
 const presentacionJuego = function () {
   return confirm(
     `¡Desafío Matemático!\n\nTe desafío a realizar cálculos mentales.\n¡Por cada respuesta correcta, ganarás 20 puntos!\n\n¿Aceptas el desafío?`
@@ -51,4 +54,7 @@ const juegoMatematico = function () {
   }
 };
 
-juegoMatematico();
+//El juego se ejecutará si el usuario hace click en jugar
+document.addEventListener("click", function () {
+  juegoMatematico();
+});
