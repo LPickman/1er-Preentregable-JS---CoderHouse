@@ -3,23 +3,34 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Juego | Desafío Matemático</title>
-    <script src="./script.js" defear></script>
+    <title>Desafío Matemático</title>
     <link rel="stylesheet" href="./css/style.css" />
     <link rel="icon" href="./img/cerebro.png" />
   </head>
-  <body style="background-color: #292c3e"></body>
+  <body>
+    <section class="container">
+      <h1>Examen de Matemática</h1>
 
-  <section class="container">
-    <h1>¡Desafío Matemático!</h1>
-    <p>
-      Pon a prueba tus habilidades sumando números aleatorios en este juego
-      emocionante. ¡Supera las 5 etapas y demuestra tu destreza matemática!
-    </p>
-    <h2>¿Te animas a aceptar el desafío?</h2>
+      <form id="login-form" action="./pages/presentacion.html" method="GET">
+        <h2>Login</h2>
+        <div>
+          <p>Ingrese su nombre de alumno:</p>
+          <p>
+            <input type="text" id="alumno" name="alumno" required />
+          </p>
+        </div>
 
-    <img src="./img/cerebro.png" alt="" />
+        <div>
+          <p>Ingrese su contraseña de alumno:</p>
+          <input type="password" id="password" name="password" required />
+        </div>
+        <p>
+          Si no tiene cuenta <a href="./pages/registro.html">Registrarse</a>
+        </p>
+        <button type="submit">Ingresar</button>
+      </form>
+    </section>
 
-    <button id="jugar">Jugar</button>
-  </section>
+    <script src="./script/script.js"></script>
+  </body>
 </html>
