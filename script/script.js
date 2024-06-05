@@ -8,20 +8,20 @@ document.addEventListener("DOMContentLoaded", function () {
   const form = document.getElementById("login-form");
 
   //Valida que el usuario ingrese un dato en alumno y contraseña.
-  form.addEventListener("submit", function (evt) {
-    const password = document.getElementById("password").value;
-    const alumno = document.getElementById("alumno").value;
+  // form.addEventListener("submit", function (evt) {
+  //   const password = document.getElementById("password").value;
+  //   const alumno = document.getElementById("alumno").value;
 
-    if (password === "" || alumno === "") {
-      evt.preventDefault();
-      alert("Por favor, complete todos los campos.");
-    }
-  });
+  //   if (password === "" || alumno === "") {
+  //     evt.preventDefault();
+  //     alert("Por favor, complete todos los campos.");
+  //   }
+  // });
 
   let num1 = Math.round(Math.random() * 10);
   let num2 = Math.round(Math.random() * 10);
   let nivel = 1;
-  let niveles = 10;
+  let niveles = 2;
   let puntos = 0;
 
   function proximaPregunta() {
@@ -30,9 +30,11 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   function ultimapregunta() {
-    if (puntos === 100) {
-      resultado_usuario.value = ""; // Limpiar el campo de entrada
-      aceptar.innerHTML = "Reiniciar";
+    if (puntos === 20) {
+      nro_pregunta.innerHTML = "";
+      resultado_usuario.value = "";
+      resultado_usuario.style.display = "none"; // Limpiar el campo de entrada
+      aceptar.innerHTML = "Entregar";
       aceptar.removeEventListener("click", preguntasExamen);
       aceptar.addEventListener("click", recargarPagina);
     }
@@ -49,13 +51,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
     if (resultado_usuario_num === resultado_real) {
       nivel++;
-      puntos += 20;
+      puntos += 10;
 
       if (nivel <= niveles) {
         proximaPregunta();
       } else {
         //puntaje.innerHTML = `Puntaje: ${puntos}/100`; // Actualizar el puntaje
-        cuentas.innerHTML = "¡Felicidades! Has completado todos los niveles.";
+        cuentas.innerHTML = `Has terminado de resolver el exámen. Tu resultado se mostrará automáticamente luego de hacer click en "Entregar".`;
         ultimapregunta();
       }
     } else {
