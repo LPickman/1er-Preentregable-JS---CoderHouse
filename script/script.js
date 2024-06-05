@@ -7,21 +7,10 @@ document.addEventListener("DOMContentLoaded", function () {
   const ingresar = document.getElementById("ingresar");
   const form = document.getElementById("login-form");
 
-  //Valida que el usuario ingrese un dato en alumno y contraseña.
-  // form.addEventListener("submit", function (evt) {
-  //   const password = document.getElementById("password").value;
-  //   const alumno = document.getElementById("alumno").value;
-
-  //   if (password === "" || alumno === "") {
-  //     evt.preventDefault();
-  //     alert("Por favor, complete todos los campos.");
-  //   }
-  // });
-
-  let num1 = Math.round(Math.random() * 10);
-  let num2 = Math.round(Math.random() * 10);
+  let num1 = Math.round(Math.random() * 1000 + 13);
+  let num2 = Math.round(Math.random() * 1000 + 11);
   let nivel = 1;
-  let niveles = 2;
+  let niveles = 10;
   let puntos = 0;
 
   function proximaPregunta() {
@@ -30,7 +19,7 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   function ultimapregunta() {
-    if (puntos === 20) {
+    if (puntos === 200) {
       nro_pregunta.innerHTML = "";
       resultado_usuario.value = "";
       resultado_usuario.style.display = "none"; // Limpiar el campo de entrada
@@ -71,4 +60,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
   proximaPregunta();
   aceptar.addEventListener("click", preguntasExamen);
+
+  //Formulario de registro
+  //Guardar los datos ingresados en el localStorage
+  localStorage.setItem();
 });
