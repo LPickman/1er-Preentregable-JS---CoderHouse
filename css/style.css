@@ -1,74 +1,242 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
+:root {
+  --primary-font: "Raleway", sans-serif;
+  --primary-color: #384155;
+}
+
 * {
   margin: 0;
   padding: 0;
+  font-family: var(--primary-font);
 }
 
-body {
-  color: white;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-  background-color: #292c3e;
+body,
+html {
+  margin: 0;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: var(--primary-font);
 }
 
 .container {
-  max-width: 70%;
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  background-color: #a9d0d1;
+}
+
+.explicacion-login {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   text-align: center;
-  margin: auto;
+  color: white;
+  width: 30%; /* 30% del ancho */
+}
+
+.explicacion-login h1 {
+  font-weight: 800;
+  color: white;
+  margin-bottom: 10px;
+  width: 100%;
+}
+
+.explicacion-login img {
+  object-fit: cover;
+  margin-top: 100px;
+  width: 100%;
+}
+
+.login-section {
+  background-color: white;
+  border-radius: 30px 0 0 30px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   height: 100vh;
-}
-
-section {
-  display: flex;
-  flex-direction: column;
-  text-align: center;
-  align-items: center;
-  justify-content: center;
   gap: 20px;
 }
 
-section h1 {
-  font-size: 2rem;
-  color: #eaff6a;
-  margin-bottom: 30px;
+.login-form {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  align-items: center;
 }
 
-img {
-  max-width: 100%;
-  width: 200px;
+.login-section h1 {
+  font-weight: 500;
+  width: 70%;
+  text-align: center;
 }
 
-button {
-  background-color: #384155;
+.login-section input {
+  border: none;
+  border-bottom: 1px solid gray;
+  padding: 10px;
+  width: 100%;
+}
+
+.buttons button {
+  width: 100%;
+  margin-top: 5px;
+  padding: 7px;
   border: none;
   border-radius: 5px;
-  padding: 10px;
-  width: 200px;
-  cursor: pointer;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-  font-size: 1.5rem;
-  transition: 0.3s all ease-in-out;
-  color: #eaff6a;
-}
-
-button:hover {
-  background-color: #5f6373;
-}
-
-.cuadro {
-  display: flex;
-  gap: 15px;
-  align-items: start;
-}
-
-.cuadro button {
-  border-radius: 5px;
   text-align: center;
-  width: 100% !important;
-  font-size: 1rem !important;
+  font-size: 1rem;
   color: white;
+  font-weight: bold;
+}
+
+#ingresar,
+#registrarse {
+  background-color: #a9d0d1;
+}
+
+#crear_cuenta {
+  background-color: transparent;
+  color: gray;
+  text-decoration: underline;
+}
+
+.buttons {
+  margin-top: 20px;
+}
+
+#ingresar:hover,
+#registrarse:hover {
+  background-color: #a5e2e4;
+  cursor: pointer;
+}
+
+#crear_cuenta:hover {
+  cursor: pointer;
+}
+
+/*Registro Exitoso*/
+.registro_exitoso {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  gap: 40px;
+  padding: 50px;
+  border-radius: 10px;
+  background-color: white;
+  box-shadow: 2px 2px 10px gray;
+  width: 50%;
+  text-align: center;
+}
+
+.registro_exitoso h1 {
+  font-weight: 900;
+  color: #44969b;
+}
+
+.registro_exitoso button {
+  padding: 10px;
+  color: white;
+  background-color: #a5e2e4;
+  border: none;
+  border-radius: 5px;
+  font-weight: 800;
+  box-shadow: 2px 2px 10px gray;
+  cursor: pointer;
+  transition: 0.3s all ease-in-out;
+}
+
+.registro_exitoso button:hover {
+  background-color: #30787a;
+}
+
+/*Media queries*/
+
+/* X-Small devices (portrait phones, less than 576px)
+No media query for `xs` since this is the default in Bootstrap */
+
+/* Small devices (landscape phones, 576px and up) */
+@media (max-width: 576px) {
+}
+/* Medium devices (tablets, 768px and up) */
+@media (max-width: 768px) {
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (max-width: 992px) {
+  .container {
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    height: 100vh;
+    background-color: #a9d0d1;
+  }
+
+  .explicacion-login {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    width: 100vw !important;
+  }
+  .explicacion-login h1 {
+    font-weight: 800;
+    color: white;
+    margin-top: 25px;
+  }
+
+  .explicacion-login img {
+    object-fit: cover;
+    margin-top: 10px;
+    width: 50%;
+  }
+
+  .login-section {
+    background-color: white;
+    border-radius: 0;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    gap: 20px;
+  }
+
+  .login-form {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    align-items: center;
+  }
+}
+
+/* X-Large devices (large desktops, 1200px and up) */
+@media (min-width: 993px) {
+  .login-section {
+    background-color: white;
+    border-radius: 30px 0 0 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    gap: 20px;
+    width: 100%;
+  }
+}
+
+/* XX-Large devices (larger desktops, 1400px and up) */
+@media (min-width: 1400px) {
 }

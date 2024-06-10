@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
+    <section class="container">
+      <div class="explicacion-login">
+        <h1>Examen Online</h1>
+        <p>Práctico y accesible desde tu hogar.</p>
+        <img src="./img/3d-escuela.png" alt="" />
+      </div>
+      <div class="login-section">
+        <h1>Alumno <span style="color: #a9d0d1">- Login</span></h1>
+
+        <form id="login-form" class="login-form">
+          <input
+            type="email"
+            placeholder="Email"
+            id="email_registrado"
+            autocomplete="off"
+            required
+          />
+          <p id="email_desconocido" style="color: red"></p>
+          <input
+            type="password"
+            placeholder="Password"
+            id="password_registrado"
+            required
+          />
+          <p id="password_desconocida" style="color: red"></p>
+          <div class="buttons">
+            <button type="submit" id="ingresar">Ingresar</button>
+            <button id="crear_cuenta">Crear cuenta</button>
+          </div>
+        </form>
+      </div>
+    </section>
+    <script src="login.js" type="module"></script>
+  </body>
+</html>

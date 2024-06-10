@@ -6,11 +6,10 @@
     <title>Juego | Desafío Matemático</title>
     <link rel="stylesheet" href="../css/style.css" />
     <link rel="icon" href="../img/cerebro.png" />
-    <script src="../script/script.js" defer></script>
   </head>
   <body>
     <section class="container">
-      <h1>Bienvenido: "nombre de alumno"</h1>
+      <h1 id="bienvenida"></h1>
       <h3>curso: blabla</h3>
       <h3>división: blabla</h3>
       <p>
@@ -20,9 +19,22 @@
         et odio commodi quis eos aspernatur iste itaque?
       </p>
 
-      <a href="../pages/examen.html" id="empezar"
-        ><button>Empezar el examen</button>
+      <a href="../pages/examen.html" id="empezar">
+        <button>Empezar el examen</button>
       </a>
     </section>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const bienvenida = document.getElementById("bienvenida");
+
+        const nombreUsuario = localStorage.getItem("nombreUsuario");
+
+        const apellidoUsuario = localStorage.getItem("apellidoUsuario");
+        if (nombreUsuario) {
+          bienvenida.textContent = `¡Bienvenido, ${nombreUsuario} ${apellidoUsuario}!`;
+        }
+      });
+    </script>
   </body>
 </html>
