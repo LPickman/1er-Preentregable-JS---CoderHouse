@@ -1,34 +1,39 @@
 .body-examen {
   background-color: var(--primary-color);
+  height: 100%; /* Hace que el contenedor ocupe toda la altura del padre (en este caso, la pantalla) */
+
+  .examen {
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+  }
 }
 
-.examen {
-  display: flex;
-  flex-direction: column;
-  padding: 30px;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  img {
-    width: 50%;
-  }
-  input {
-    padding: 15px;
-    border: none;
-    border-radius: 5px;
-    font-size: 1rem;
-  }
-  button {
-    background-color: rgb(81, 138, 104);
-    color: white;
-    padding: 10px;
-    border: none;
-    border-radius: 5px;
-    transition: 0.3s all ease-in-out;
-    &:hover {
-      background-color: rgb(34, 57, 78);
-      color: white;
-      cursor: pointer;
-    }
-  }
+.examen img {
+  width: 50%;
+}
+
+.examen input {
+  padding: 15px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+.examen button {
+  background-color: rgb(81, 138, 104);
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  transition: 0.3s all ease-in-out;
+}
+
+.examen button:hover {
+  background-color: rgb(34, 57, 78);
+  color: white;
+  cursor: pointer;
 }

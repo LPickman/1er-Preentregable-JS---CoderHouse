@@ -38,6 +38,8 @@
             placeholder="Email"
             id="email"
             autocomplete="off"
+            pattern="^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$"
+            title="Por favor, introduce una dirección de correo electrónico válida."
             required
           />
           <p id="email_ya_registrado" style="color: red"></p>
@@ -45,6 +47,8 @@
             type="password"
             placeholder="Password"
             id="password"
+            pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d\S]{8,}$"
+            title="La contraseña debe tener al menos 8 caracteres, incluyendo al menos una letra minúscula, una letra mayúscula y un número."
             required
           />
 

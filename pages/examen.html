@@ -9,11 +9,11 @@
   </head>
   <body class="body-examen">
     <section class="examen">
-      <h3 id="puntaje"></h3>
+      <h3 id="puntaje" style="color: white; font-size: 0.8rem"></h3>
       <h3 id="dificultad_elegida"></h3>
-      <img src="../img/calculando.png" alt="" />
+      <img src="../img/calculando.png" id="cerebro-img" alt="" />
       <p id="nro_pregunta"></p>
-      <div id="cuentas"></div>
+      <div id="cuentas" style="text-align: center"></div>
       <input
         type="text"
         id="resultado_usuario"
@@ -21,6 +21,7 @@
         placeholder="Coloque su resultado:"
       />
       <button id="aceptar">Aceptar</button>
+      <button id="salir" style="display: none">Salir de la plataforma</button>
     </section>
     <script src="../script/examen.js" defer></script>
   </body>

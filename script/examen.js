@@ -6,62 +6,117 @@ document.addEventListener("DOMContentLoaded", function () {
   const nro_pregunta = document.getElementById("nro_pregunta");
   const ingresar = document.getElementById("ingresar");
   const form = document.getElementById("login-form");
+  const cerebroImg = document.getElementById("cerebro-img");
+  const salir = document.getElementById("salir");
 
-  let num1 = Math.round(Math.random() * 1000 + 13);
-  let num2 = Math.round(Math.random() * 1000 + 11);
+  let num1 = Math.round(Math.random() * 100) + 13;
+  let num2 = Math.round(Math.random() * 100) + 11;
   let nivel = 1;
   let niveles = 10;
   let puntos = 0;
+  let respuestas = [];
 
   function proximaPregunta() {
-    cuentas.innerHTML = `¿Cuánto es ${num1 * nivel} + ${num2 * nivel}?`;
-    nro_pregunta.innerHTML = `Pregunta ${nivel} de ${niveles} :`;
-  }
-
-  function ultimapregunta() {
-    if (puntos === 200) {
-      nro_pregunta.innerHTML = "";
-      resultado_usuario.value = "";
-      resultado_usuario.style.display = "none"; // Limpiar el campo de entrada
-      aceptar.innerHTML = "Entregar";
-      aceptar.removeEventListener("click", preguntasExamen);
-      aceptar.addEventListener("click", recargarPagina);
+    if (nivel <= niveles) {
+      cuentas.innerHTML = `¿Cuánto es ${num1 * nivel} + ${num2 * nivel}?`;
+      nro_pregunta.innerHTML = `Pregunta ${nivel} de ${niveles} :`;
+    } else {
+      cuentas.innerHTML = ""; // Limpiar el contenido de cuentas
     }
   }
 
-  // Recargar la misma página
-  function recargarPagina() {
-    location.reload();
+  function mostrarResultado() {
+    respuestas.forEach((respuesta, index) => {
+      puntaje.innerHTML += `<br>Pregunta ${index + 1}: ${
+        respuesta.correcto ? "✅" : "❌"
+      } (Tu respuesta: ${respuesta.respuesta_usuario}, Operación: ${
+        respuesta.suma
+      }, Respuesta correcta: ${respuesta.respuesta_real}) <br>`;
+    });
+
+    localStorage.setItem(
+      "resultadosExamen",
+      JSON.stringify({
+        puntos: puntos,
+        totalPreguntas: niveles,
+        respuestas: respuestas,
+      })
+    );
+
+    if (puntos <= 5) {
+      cuentas.innerHTML = `Lamentablemente no ha aprobado el examen. Su nota fue ${puntos}.`;
+      cuentas.style.color = "red";
+      cuentas.style.fontWeight = "bold";
+      salir.style.display = "block";
+    } else {
+      cuentas.innerHTML = `¡Felicitaciones! Ha aprobado el examen con un ${puntos}`;
+      cuentas.style.color = "green";
+      cuentas.style.fontWeight = "bold";
+      salir.style.display = "block";
+    }
+
+    salir.addEventListener("click", function () {
+      window.location.href = "../index.html";
+    });
+  }
+
+  function ultimapregunta() {
+    if (nivel > niveles) {
+      nro_pregunta.innerHTML = "";
+      resultado_usuario.style.display = "none";
+      aceptar.innerHTML = "Entregar";
+      aceptar.removeEventListener("click", preguntasExamen);
+      aceptar.addEventListener("click", entregarResultados);
+    }
+  }
+
+  function entregarResultados() {
+    mostrarResultado();
+    aceptar.style.display = "none";
+    cerebroImg.style.display = "none";
   }
 
   function preguntasExamen() {
     let resultado_usuario_num = parseInt(resultado_usuario.value);
+
+    if (isNaN(resultado_usuario_num) || resultado_usuario.value.trim() === "") {
+      // Mostrar el mensaje de dato inválido
+      cuentas.innerHTML += "<br>Dato inválido. Por favor, ingresa un número.";
+      return;
+    }
+
     let resultado_real = num1 * nivel + num2 * nivel;
 
-    if (resultado_usuario_num === resultado_real) {
-      nivel++;
-      puntos += 10;
+    respuestas.push({
+      suma: `${num1 * nivel} + ${num2 * nivel}`,
+      respuesta_usuario: resultado_usuario_num,
+      respuesta_real: resultado_real,
+      correcto: resultado_usuario_num === resultado_real,
+    });
 
-      if (nivel <= niveles) {
-        proximaPregunta();
-      } else {
-        //puntaje.innerHTML = `Puntaje: ${puntos}/100`; // Actualizar el puntaje
-        cuentas.innerHTML = `Has terminado de resolver el exámen. Tu resultado se mostrará automáticamente luego de hacer click en "Entregar".`;
-        ultimapregunta();
-      }
-    } else {
-      cuentas.innerHTML = `Respuesta incorrecta. Intenta de nuevo: ¿Cuánto es ${
-        num1 * nivel
-      } + ${num2 * nivel}?`;
+    if (resultado_usuario_num === resultado_real) {
+      puntos += 1;
     }
-    // Limpiar el campo de entrada
+
+    nivel++;
+
+    if (nivel <= niveles) {
+      proximaPregunta();
+    } else {
+      cuentas.innerHTML = `<br>Has terminado de resolver el examen. Tu resultado se mostrará automáticamente luego de hacer click en "Entregar".`;
+      ultimapregunta();
+    }
+
     resultado_usuario.value = "";
   }
 
   proximaPregunta();
   aceptar.addEventListener("click", preguntasExamen);
+  resultado_usuario.addEventListener("keypress", function (event) {
+    if (event.key === "Enter") {
+      preguntasExamen();
+    }
+  });
 
-  //Formulario de registro
-  //Guardar los datos ingresados en el localStorage
-  localStorage.setItem();
+  localStorage.removeItem("resultadosExamen");
 });
