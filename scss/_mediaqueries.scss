@@ -1,0 +1,83 @@
+// /*Media queries*/
+
+// /* X-Small devices (portrait phones, less than 576px)
+// No media query for `xs` since this is the default in Bootstrap */
+
+// /* Small devices (landscape phones, 576px and up) */
+// @media (max-width: 576px) {
+// }
+// /* Medium devices (tablets, 768px and up) */
+// @media (max-width: 768px) {
+// }
+
+// /* Large devices (desktops, 992px and up) */
+// @media (max-width: 992px) {
+//   .container {
+//     display: flex;
+//     flex-direction: column;
+//     width: 100vw;
+//     height: 100vh;
+//     background-color: #a9d0d1;
+//   }
+
+//   .explicacion-login {
+//     display: flex;
+//     flex-direction: column;
+//     justify-content: center;
+//     align-items: center;
+//     text-align: center;
+//     color: white;
+//     width: 100vw !important;
+//   }
+//   .explicacion-login h1 {
+//     font-weight: 800;
+//     color: white;
+//     margin-top: 25px;
+//   }
+
+//   .explicacion-login img {
+//     object-fit: cover;
+//     margin-top: 10px;
+//     width: 50%;
+//   }
+
+//   .login-section {
+//     background-color: white;
+//     border-radius: 0;
+//     padding: 30px;
+//     display: flex;
+//     flex-direction: column;
+//     justify-content: center;
+//     align-items: center;
+//     height: 100vh;
+//     gap: 20px;
+//   }
+
+//   .login-form {
+//     width: 50%;
+//     display: flex;
+//     flex-direction: column;
+//     gap: 5px;
+//     align-items: center;
+//   }
+// }
+
+// /* X-Large devices (large desktops, 1200px and up) */
+
+// @media (min-width: 993px) {
+//   .login-section {
+//     background-color: white;
+//     border-radius: 30px 0 0 30px;
+//     display: flex;
+//     flex-direction: column;
+//     justify-content: center;
+//     align-items: center;
+//     height: 100vh;
+//     gap: 20px;
+//     width: 100%;
+//   }
+// }
+
+// /* XX-Large devices (larger desktops, 1400px and up) */
+// @media (min-width: 1400px) {
+// }

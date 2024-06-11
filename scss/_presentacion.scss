@@ -1,0 +1,81 @@
+.presentacion {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch; /* Hacer que los elementos se estiren para ocupar toda la altura */
+}
+
+.bienvenida {
+  background-color: white;
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.bienvenida h1 {
+  margin-bottom: 30px;
+  color: var(--primary-color);
+}
+
+.bienvenida h4,
+.bienvenida ul {
+  list-style: none;
+  font-weight: 500;
+}
+
+.bienvenida ul li {
+  padding: 10px;
+}
+
+.bienvenida ul li strong {
+  color: var(--primary-color);
+}
+
+.bienvenida-ingreso {
+  width: 100%;
+  background-color: #a9d0d1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1; /* Hacer que este elemento crezca para ocupar todo el espacio disponible */
+  padding: 20px;
+  gap: 20px;
+}
+
+.bienvenida-ingreso img {
+  width: 100px;
+  border-radius: 100px;
+}
+
+.bienvenida-ingreso h3 {
+  font-weight: 800;
+  color: white;
+}
+
+.bienvenida-ingreso ul {
+  list-style: none;
+}
+
+.bienvenida-ingreso ul li {
+  font-weight: 420;
+  padding: 2px;
+}
+
+#empezar_examen {
+  background-color: var(--secundary-color);
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  font-weight: 600;
+  color: black;
+  box-shadow: 1px 1px 10px gray;
+}
+
+#empezar_examen:hover {
+  cursor: pointer;
+  background-color: rgb(97, 148, 107);
+  color: white;
+}

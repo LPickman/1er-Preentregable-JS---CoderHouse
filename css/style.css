@@ -1,10 +1,4 @@
 @import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
-
-:root {
-  --primary-font: "Raleway", sans-serif;
-  --primary-color: #384155;
-}
-
 * {
   margin: 0;
   padding: 0;
@@ -22,8 +16,22 @@ html {
   font-family: var(--primary-font);
 }
 
+:root {
+  --primary-font: "Raleway", sans-serif;
+  --primary-color: #a9d0d1;
+  --secundary-color: white;
+}
+
+/* Estilos generales */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 .container {
   display: flex;
+  flex-direction: column;
   width: 100vw;
   height: 100vh;
   background-color: #a9d0d1;
@@ -36,45 +44,53 @@ html {
   align-items: center;
   text-align: center;
   color: white;
-  width: 30%; /* 30% del ancho */
+  width: 100%;
+  height: 50vh; /* 50% del alto de la pantalla */
+  margin-top: 0px;
+  padding: 10px;
 }
 
 .explicacion-login h1 {
   font-weight: 800;
   color: white;
-  margin-bottom: 10px;
+  margin-bottom: 20px; /* Aumenta el margen inferior */
   width: 100%;
 }
 
 .explicacion-login img {
   object-fit: cover;
-  margin-top: 100px;
-  width: 100%;
+  margin-top: 20px;
+  width: 60%;
+  max-width: 300px;
 }
 
 .login-section {
   background-color: white;
-  border-radius: 30px 0 0 30px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  width: 100%;
+  height: 50vh; /* 50% del alto de la pantalla */
+  padding: 20px;
   gap: 20px;
 }
 
 .login-form {
-  width: 50%;
+  width: 80%;
+  max-width: 400px;
   display: flex;
   flex-direction: column;
-  gap: 5px;
+  gap: 10px;
   align-items: center;
 }
 
 .login-section h1 {
-  font-weight: 500;
-  width: 70%;
+  font-weight: 600;
+  font-size: 1.2rem;
+  width: 100%;
   text-align: center;
+  margin-top: 10px; /* Aumenta el margen inferior */
 }
 
 .login-section input {
@@ -87,13 +103,14 @@ html {
 .buttons button {
   width: 100%;
   margin-top: 5px;
-  padding: 7px;
+  padding: 10px;
   border: none;
   border-radius: 5px;
   text-align: center;
   font-size: 1rem;
   color: white;
   font-weight: bold;
+  margin-bottom: 10px;
 }
 
 #ingresar,
@@ -109,6 +126,7 @@ html {
 
 .buttons {
   margin-top: 20px;
+  width: 100%;
 }
 
 #ingresar:hover,
@@ -121,6 +139,25 @@ html {
   cursor: pointer;
 }
 
+/* Media Queries */
+@media (min-width: 768px) {
+  .container {
+    flex-direction: row;
+  }
+  .explicacion-login,
+  .login-section {
+    width: 50%;
+    height: 100vh;
+    padding: 0;
+  }
+  .explicacion-login img {
+    width: 100%;
+    margin-top: 100px;
+  }
+  .login-form {
+    width: 50%;
+  }
+}
 /*Registro Exitoso*/
 .registro_exitoso {
   display: flex;
@@ -158,85 +195,121 @@ html {
   background-color: #30787a;
 }
 
-/*Media queries*/
-
-/* X-Small devices (portrait phones, less than 576px)
-No media query for `xs` since this is the default in Bootstrap */
-
-/* Small devices (landscape phones, 576px and up) */
-@media (max-width: 576px) {
-}
-/* Medium devices (tablets, 768px and up) */
-@media (max-width: 768px) {
+.presentacion {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch; /* Hacer que los elementos se estiren para ocupar toda la altura */
 }
 
-/* Large devices (desktops, 992px and up) */
-@media (max-width: 992px) {
-  .container {
-    display: flex;
-    flex-direction: column;
-    width: 100vw;
-    height: 100vh;
-    background-color: #a9d0d1;
-  }
-
-  .explicacion-login {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    color: white;
-    width: 100vw !important;
-  }
-  .explicacion-login h1 {
-    font-weight: 800;
-    color: white;
-    margin-top: 25px;
-  }
-
-  .explicacion-login img {
-    object-fit: cover;
-    margin-top: 10px;
-    width: 50%;
-  }
-
-  .login-section {
-    background-color: white;
-    border-radius: 0;
-    padding: 30px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    gap: 20px;
-  }
-
-  .login-form {
-    width: 50%;
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-    align-items: center;
-  }
+.bienvenida {
+  background-color: white;
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
 }
 
-/* X-Large devices (large desktops, 1200px and up) */
-@media (min-width: 993px) {
-  .login-section {
-    background-color: white;
-    border-radius: 30px 0 0 30px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    gap: 20px;
-    width: 100%;
-  }
+.bienvenida h1 {
+  margin-bottom: 30px;
+  color: var(--primary-color);
 }
 
-/* XX-Large devices (larger desktops, 1400px and up) */
-@media (min-width: 1400px) {
+.bienvenida h4,
+.bienvenida ul {
+  list-style: none;
+  font-weight: 500;
 }
+
+.bienvenida ul li {
+  padding: 10px;
+}
+
+.bienvenida ul li strong {
+  color: var(--primary-color);
+}
+
+.bienvenida-ingreso {
+  width: 100%;
+  background-color: #a9d0d1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1; /* Hacer que este elemento crezca para ocupar todo el espacio disponible */
+  padding: 20px;
+  gap: 20px;
+}
+
+.bienvenida-ingreso img {
+  width: 100px;
+  border-radius: 100px;
+}
+
+.bienvenida-ingreso h3 {
+  font-weight: 800;
+  color: white;
+}
+
+.bienvenida-ingreso ul {
+  list-style: none;
+}
+
+.bienvenida-ingreso ul li {
+  font-weight: 420;
+  padding: 2px;
+}
+
+#empezar_examen {
+  background-color: var(--secundary-color);
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  font-weight: 600;
+  color: black;
+  box-shadow: 1px 1px 10px gray;
+}
+
+#empezar_examen:hover {
+  cursor: pointer;
+  background-color: rgb(97, 148, 107);
+  color: white;
+}
+
+.body-examen {
+  background-color: var(--primary-color);
+}
+
+.examen {
+  display: flex;
+  flex-direction: column;
+  padding: 30px;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+.examen img {
+  width: 50%;
+}
+.examen input {
+  padding: 15px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+.examen button {
+  background-color: rgb(81, 138, 104);
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  transition: 0.3s all ease-in-out;
+}
+.examen button:hover {
+  background-color: rgb(34, 57, 78);
+  color: white;
+  cursor: pointer;
+}
+
+/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,238 @@
+// .container {
+//   display: flex;
+//   width: 100vw;
+//   height: 100vh;
+//   background-color: #a9d0d1;
+// }
+
+// .explicacion-login {
+//   display: flex;
+//   flex-direction: column;
+//   justify-content: center;
+//   align-items: center;
+//   text-align: center;
+//   color: white;
+//   width: 30%; /* 30% del ancho */
+// }
+
+// .explicacion-login h1 {
+//   font-weight: 800;
+//   color: white;
+//   margin-bottom: 10px;
+//   width: 100%;
+// }
+
+// .explicacion-login img {
+//   object-fit: cover;
+//   margin-top: 100px;
+//   width: 100%;
+// }
+
+// .login-section {
+//   background-color: white;
+//   border-radius: 30px 0 0 30px;
+//   display: flex;
+//   flex-direction: column;
+//   justify-content: center;
+//   align-items: center;
+//   height: 100vh;
+//   gap: 20px;
+// }
+
+// .login-form {
+//   width: 50%;
+//   display: flex;
+//   flex-direction: column;
+//   gap: 5px;
+//   align-items: center;
+// }
+
+// .login-section h1 {
+//   font-weight: 500;
+//   width: 70%;
+//   text-align: center;
+// }
+
+// .login-section input {
+//   border: none;
+//   border-bottom: 1px solid gray;
+//   padding: 10px;
+//   width: 100%;
+// }
+
+// .buttons button {
+//   width: 100%;
+//   margin-top: 5px;
+//   padding: 7px;
+//   border: none;
+//   border-radius: 5px;
+//   text-align: center;
+//   font-size: 1rem;
+//   color: white;
+//   font-weight: bold;
+// }
+
+// #ingresar,
+// #registrarse {
+//   background-color: #a9d0d1;
+// }
+
+// #crear_cuenta {
+//   background-color: transparent;
+//   color: gray;
+//   text-decoration: underline;
+// }
+
+// .buttons {
+//   margin-top: 20px;
+// }
+
+// #ingresar:hover,
+// #registrarse:hover {
+//   background-color: #a5e2e4;
+//   cursor: pointer;
+// }
+
+// #crear_cuenta:hover {
+//   cursor: pointer;
+// }
+
+/* Estilos generales */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  height: 100vh;
+  background-color: #a9d0d1;
+}
+
+.explicacion-login {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+  width: 100%;
+  height: 50vh; /* 50% del alto de la pantalla */
+  margin-top: 0px;
+  padding: 10px;
+}
+
+.explicacion-login h1 {
+  font-weight: 800;
+  color: white;
+  margin-bottom: 20px; /* Aumenta el margen inferior */
+  width: 100%;
+}
+
+.explicacion-login img {
+  object-fit: cover;
+  margin-top: 20px;
+  width: 60%;
+  max-width: 300px;
+}
+
+.login-section {
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 50vh; /* 50% del alto de la pantalla */
+  padding: 20px;
+  gap: 20px;
+}
+
+.login-form {
+  width: 80%;
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+}
+
+.login-section h1 {
+  font-weight: 600;
+  font-size: 1.2rem;
+  width: 100%;
+  text-align: center;
+  margin-top: 10px; /* Aumenta el margen inferior */
+}
+
+.login-section input {
+  border: none;
+  border-bottom: 1px solid gray;
+  padding: 10px;
+  width: 100%;
+}
+
+.buttons button {
+  width: 100%;
+  margin-top: 5px;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  text-align: center;
+  font-size: 1rem;
+  color: white;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+#ingresar,
+#registrarse {
+  background-color: #a9d0d1;
+}
+
+#crear_cuenta {
+  background-color: transparent;
+  color: gray;
+  text-decoration: underline;
+}
+
+.buttons {
+  margin-top: 20px;
+  width: 100%;
+}
+
+#ingresar:hover,
+#registrarse:hover {
+  background-color: #a5e2e4;
+  cursor: pointer;
+}
+
+#crear_cuenta:hover {
+  cursor: pointer;
+}
+
+/* Media Queries */
+@media (min-width: 768px) {
+  .container {
+    flex-direction: row;
+  }
+
+  .explicacion-login,
+  .login-section {
+    width: 50%;
+    height: 100vh;
+    padding: 0;
+  }
+
+  .explicacion-login img {
+    width: 100%;
+    margin-top: 100px;
+  }
+
+  .login-form {
+    width: 50%;
+  }
+}

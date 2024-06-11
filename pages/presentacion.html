@@ -7,22 +7,45 @@
     <link rel="stylesheet" href="../css/style.css" />
     <link rel="icon" href="../img/cerebro.png" />
   </head>
-  <body>
-    <section class="container">
+  <body class="presentacion">
+    <div class="bienvenida">
       <h1 id="bienvenida"></h1>
-      <h3>curso: blabla</h3>
-      <h3>división: blabla</h3>
-      <p>
-        Requisitos antes iniciar el examen: Lorem ipsum dolor sit amet
-        consectetur adipisicing elit. Similique adipisci doloribus ipsum
-        accusamus illum officiis natus, earum reiciendis nihil maxime ea aperiam
-        et odio commodi quis eos aspernatur iste itaque?
-      </p>
 
+      <h4>Te dejo estos consejos antes de inicar el examen:</h4>
+      <ul>
+        <li>
+          <strong>Revisa tus materiales:</strong> Asegúrate de tener todo lo que
+          necesitas, como lápices, bolígrafos, calculadora, identificaciones y
+          cualquier otro material permitido.
+        </li>
+        <li>
+          <strong>Lee las instrucciones:</strong> Tómate el tiempo para leer
+          cuidadosamente todas las instrucciones del examen antes de comenzar.
+        </li>
+        <li>
+          <strong>Gestiona tu tiempo:</strong> Mira el examen completo para
+          calcular cuánto tiempo dedicarás a cada sección. Prioriza las
+          preguntas que sabes y deja las más difíciles para el final.
+        </li>
+        <li>
+          <strong>Respira y relájate:</strong> Realiza ejercicios de respiración
+          profunda para calmarte y reducir la ansiedad antes de empezar.
+        </li>
+      </ul>
+    </div>
+    <div class="bienvenida-ingreso">
+      <img src="../img/profesor-3d.png" alt="" />
+      <h3>Examen Matemática</h3>
+      <ul>
+        <li>Tema: Sumas avanzadas</li>
+        <li>Duración: 10 minutos</li>
+        <li>Preguntas: 10</li>
+        <li>Puntaje: 1 punto por respuesta correcta</li>
+      </ul>
       <a href="../pages/examen.html" id="empezar">
-        <button>Empezar el examen</button>
+        <button id="empezar_examen">Empezar el examen</button>
       </a>
-    </section>
+    </div>
 
     <script>
       document.addEventListener("DOMContentLoaded", () => {
@@ -32,7 +55,7 @@
 
         const apellidoUsuario = localStorage.getItem("apellidoUsuario");
         if (nombreUsuario) {
-          bienvenida.textContent = `¡Bienvenido, ${nombreUsuario} ${apellidoUsuario}!`;
+          bienvenida.textContent = `¡Bienvenid@, ${nombreUsuario} ${apellidoUsuario}!`;
         }
       });
     </script>
